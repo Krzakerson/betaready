@@ -1,1 +1,13 @@
-﻿
+﻿@page 
+
+@(Html.DevExtreme().TreeList<Pracownike>()
+      .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("Id"))
+      .Columns(columns => {
+        columns.AddFor(m => m.Id).AllowEditing(false);
+        columns.AddFor(m => m.Name);
+        columns.AddFor(m => m.LastName);
+        columns.AddFor(m => m.CreationTime).AllowEditing(false);
+        columns.AddFor(m => m.UpdateTime).AllowEditing(false);
+        columns.AddFor(m => m.PositionId);
+    })
+)

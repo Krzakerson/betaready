@@ -40,11 +40,11 @@
 )
 
 @using (Html.DevExtreme().NamedTemplate("dataGrid")) {
-    @(Html.DevExtreme().DataGrid<Stanowisko>()
-         .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").InsertAction("Post").DeleteAction("Delete").UpdateAction("Update").Key("Position"))
+    @(Html.DevExtreme().DataGrid<Pracownike>()
+         .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").InsertAction("Post").DeleteAction("Delete").UpdateAction("Update").Key("PositionId"))
         .Columns(c => {
           
-            c.AddFor(m => m.Position);
+            c.AddFor(m => m.PositionId);
            
         })
         

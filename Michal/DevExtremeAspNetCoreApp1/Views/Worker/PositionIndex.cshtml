@@ -1,0 +1,27 @@
+﻿@using DevExtremeAspNetCoreApp1.Models
+<h1>Web Panel Michal Stanowiska</h1>
+
+@(Html.DevExtreme().DataGrid<Stanowisko>()
+    .ElementAttr(new { @class = "dx-card wide-card" })
+    .DataSource(d => d.Mvc().Controller("Use").LoadAction("Get").InsertAction("Post").DeleteAction("Delete").UpdateAction("Update").Key("PersonId"))
+    .ShowBorders(false)
+    .FilterRow(f => f.Visible(true))
+    .FocusedRowEnabled(true)
+    .FocusedRowIndex(0)
+    .ColumnAutoWidth(true)
+    .ColumnHidingEnabled(true)
+    .Columns(columns => {
+        columns.AddFor(m => m.PersonId).AllowEditing(false);
+        columns.AddFor(m => m.Position);
+        columns.AddFor(m => m.CreationTime).AllowEditing(false);
+        columns.AddFor(m => m.UpdateTime).AllowEditing(false);
+    })
+    .Paging(p => p.PageSize(10))
+    .Pager(p => p
+        .ShowPageSizeSelector(true)
+        .AllowedPageSizes(new[] { 5, 10, 20 })
+        .ShowInfo(true)
+    )
+   .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
+  
+) 

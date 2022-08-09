@@ -143,6 +143,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.21.4, )"
+            },
+            "IKVM": {
+              "target": "Package",
+              "version": "[8.2.1, )"
+            },
             "MSTest.TestAdapter": {
               "target": "Package",
               "version": "[2.2.8, )"
@@ -150,6 +158,10 @@
             "MSTest.TestFramework": {
               "target": "Package",
               "version": "[2.2.8, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[6.0.7, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
